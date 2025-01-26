@@ -1,0 +1,30 @@
+.statistics {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  canvas {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  p{
+    
+    font-size: 1.2rem; 
+    text-align: center; 
+    margin: 20px 0; 
+    font-weight: bold; 
+    padding: 10px; 
+    border-radius: 8px; 
+  }
+  .notfound{
+    color:#FF6B6B;
+  }
+  .indicator_completed{
+    color:#44C6BB;
+  
+  }
+  .indicator_uncompleted{
+    color:#D3D3D3;
+  
+  }
+  

@@ -1,0 +1,92 @@
+/* Overall header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #44C6BB; /* Header background color */
+    color: white; /* Text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  /* Styles for the title */
+  .header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Link styles */
+  .header h1 a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .header h1 a:hover {
+    color: #e5f8f7; /* Change color on hover */
+  }
+  
+  /* Right section styles */
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Clock styles */
+  .clock {
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Favorites button styles */
+  .header-right .favorites-button {
+    background-color: white; /* Button background */
+    color: #44C6BB; /* Button text color */
+    border: none; /* Remove border */
+    padding: 0.5rem 1rem; /* Button padding */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+    margin-right: 1rem; /* Space between buttons */
+  }
+  
+  .header-right .favorites-button:hover {
+    background-color: #e5f8f7; /* Hover background color */
+    transform: scale(1.05); /* Slight scale effect on hover */
+  }
+  
+  /* Add button styles */
+  .header-right .add-button {
+    background-color: #FF6B6B; /* Bright color for visibility */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 0.5rem 1rem; /* Button padding */
+    border-radius: 50%; /* Circular button */
+    font-size: 1.5rem; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+  }
+  
+  .header-right .add-button:hover {
+    background-color: #FF4C4C; /* Darker shade on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column; /* Stack items on smaller screens */
+      align-items: flex-start; /* Align items to the start */
+    }
+  
+    .header .nav-links {
+      flex-direction: column; /* Stack navigation links */
+      gap: 1rem; /* Space between links */
+    }
+  }
+  .logo {
+    width: 50px; /* Adjust size as necessary */
+    height: auto;
+  }

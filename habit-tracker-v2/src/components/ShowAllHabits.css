@@ -1,0 +1,122 @@
+/* Container for Habit List */
+.habit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));  
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Card Styling */
+.habit-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Allow the card to grow based on content */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto; /* Ensure the card grows in height */
+  overflow: hidden; /* Hide overflow if any */
+}
+
+.habit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon and Title Layout */
+.card-front {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between icon and title */
+  margin-bottom: 1rem;
+}
+
+.card-front .icon {
+  font-size: 2rem; /* Icon size */
+  border: none;
+  align-self: center;
+}
+
+.card-front h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  flex-grow: 1; /* Allow title to take remaining space */
+}
+
+/* Description Styling */
+.card-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  white-space: normal; /* Allow text to wrap */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Truncate long text */
+}
+
+/* Date Styling */
+.card-date {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+}
+
+/* Action Buttons */
+.card-actions {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  justify-content: flex-start; /* Align buttons to the left */
+  margin-top: 1rem; /* Space between content and buttons */
+}
+
+/* Action Button Styling */
+.action-btn {
+  font-size: 1rem;
+  color: #777;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  padding: 0.5rem;
+  font-size: 1.5rem; /* Change icon size */
+  color: #25232361; /* Default icon color */
+  transition: transform 0.3s ease, color 0.3s ease;
+ 
+}
+
+.action-btn:hover {
+  color: #000000;  
+  transform: scale(1.2);
+  
+}
+
+/* Tooltip Styling for Buttons */
+.action-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1; 
+}
+.action-btn[data-tooltip="Statistics"] {
+  z-index: 10; /* Bring the statistics icon to the front */
+}
+.action-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+ 

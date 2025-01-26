@@ -1,12 +1,11 @@
-/* Container for Habit List */
+ 
 .habit-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));  
   gap: 1.5rem;
   padding: 2rem;
 }
-
-/* Card Styling */
+ 
 .habit-card {
   background: #f9f9f9;
   border-radius: 15px;
@@ -14,27 +13,26 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Allow the card to grow based on content */
+  justify-content: flex-start;  
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: auto; /* Ensure the card grows in height */
-  overflow: hidden; /* Hide overflow if any */
-}
+  height: auto;  
+  overflow: hidden; 
 
 .habit-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Icon and Title Layout */
+ 
 .card-front {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Space between icon and title */
+  gap: 1rem; 
   margin-bottom: 1rem;
 }
 
 .card-front .icon {
-  font-size: 2rem; /* Icon size */
+  font-size: 2rem; 
   border: none;
   align-self: center;
 }
@@ -44,36 +42,32 @@
   font-weight: bold;
   color: #333;
   margin: 0;
-  flex-grow: 1; /* Allow title to take remaining space */
+  flex-grow: 1;  
 }
-
-/* Description Styling */
+ 
 .card-description {
   font-size: 1rem;
   color: #666;
   line-height: 1.5;
   margin: 0.5rem 0;
-  white-space: normal; /* Allow text to wrap */
+  white-space: normal; 
   overflow: hidden;
-  text-overflow: ellipsis; /* Truncate long text */
+  text-overflow: ellipsis; 
 }
-
-/* Date Styling */
+ 
 .card-date {
   font-size: 0.85rem;
   color: #aaa;
   margin-top: 0.5rem;
 }
-
-/* Action Buttons */
+ 
 .card-actions {
   display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap */
-  justify-content: flex-start; /* Align buttons to the left */
-  margin-top: 1rem; /* Space between content and buttons */
+  flex-wrap: wrap;  
+  justify-content: flex-start;  
+  margin-top: 1rem;  
 }
-
-/* Action Button Styling */
+ 
 .action-btn {
   font-size: 1rem;
   color: #777;
@@ -82,8 +76,8 @@
   border: none;
   transition: transform 0.3s ease, color 0.3s ease;
   padding: 0.5rem;
-  font-size: 1.5rem; /* Change icon size */
-  color: #25232361; /* Default icon color */
+  font-size: 1.5rem;  
+  color: #25232361;  
   transition: transform 0.3s ease, color 0.3s ease;
  
 }
@@ -93,8 +87,7 @@
   transform: scale(1.2);
   
 }
-
-/* Tooltip Styling for Buttons */
+ 
 .action-btn::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -113,10 +106,11 @@
   z-index: 1; 
 }
 .action-btn[data-tooltip="Statistics"] {
-  z-index: 10; /* Bring the statistics icon to the front */
+  z-index: 10;  
 }
 .action-btn:hover::after {
   opacity: 1;
   transform: translateX(-50%) translateY(-5px);
 }
  
+}

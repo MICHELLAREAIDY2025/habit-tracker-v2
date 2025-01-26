@@ -37,14 +37,15 @@ const AddEditHabit = ({ habits, addHabit, editHabit }) => {
   };
 
   // Function to handle form submission
+   
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();// Prevent default form submission behavior
     if (editingHabit) {
-      editHabit(form); // Edit the existing habit if we are in edit mode
+      editHabit(form);// Edit the existing habit if we are in edit mode
     } else {
-      addHabit(form); // Add a new habit if we are in add mode
+      addHabit(form);//Add a new habit if we are in add mode
     }
-    navigate('/'); // Navigate back to the home page after submission
+    navigate('/habits'); // Navigate back to the habits page after submission
   };
 
   // Render the form for adding/editing a habit

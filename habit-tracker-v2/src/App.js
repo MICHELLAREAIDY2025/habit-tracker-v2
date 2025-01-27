@@ -58,15 +58,13 @@ const App = () => {
     );
   };
 
-  const filteredHabits = showFavorites
-    ? habits.filter((habit) => habit.isFavorite)
-    : habits;
+  const filteredHabits = showFavorites ? habits.filter((habit) => habit.isFavorite) : habits
 
   return (
     <Router>
-      <Header toggleShowFavorites={() => setShowFavorites(!showFavorites)} />
+       <Header showFavorites={showFavorites} setShowFavorites={setShowFavorites} />
       <Routes> 
-        <Route path="/welcome" element={<WaveBackground />} />
+        <Route path="/welcome" element={<WaveBackground setShowFavorites={setShowFavorites}/>} />
        
         <Route path="/" element={<Navigate to="/welcome" />} />
          

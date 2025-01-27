@@ -1,74 +1,141 @@
+/* Form container styling */
 .add-edit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; /* Increased gap for better spacing */
-    padding: 2rem;
-    background-color: #f9f9f9; /* Light background for form */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex; /* Use flexbox layout to arrange elements vertically */
+  flex-direction: column; /* Stack the elements in a column */
+  gap: 1.2rem; /* Slightly more space between elements for better organization */
+  padding: 2rem; /* Increased padding for more comfort and breathing space */
+  background: linear-gradient(145deg, #f9f9f9, #e0e0e0); /* Soft gradient background for a modern, dynamic look */
+  border-radius: 10px; /* Rounded corners for a smoother design */
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for depth */
+  max-width: 400px; /* Restrict form width to make it more compact */
+  margin: 3% auto; /* Center the form horizontally and add vertical space */
+}
+
+/* Form title styling */
+.form-title {
+  font-size: 1.6rem; /* Larger font size for a more prominent title */
+  font-family: 'Arial', sans-serif; /* Clean, sans-serif font */
+  color: #44C6BB; /* Title color to match the form theme */
+  text-align: center; /* Center the title for a balanced look */
+  margin-bottom: 0.7rem; /* Slightly more space below title */
+}
+
+/* Input, textarea, and date-picker fields styling */
+.input-field,
+.textarea-field,
+.date-picker {
+  padding: 3.2rem; /* Adds comfortable padding inside the fields */
+  border: 1px solid #ccc; /* Light grey border to define input boundaries */
+  border-radius: 8px; /* Rounded corners for a smoother, modern look */
+  font-size: 1.05rem; /* Sets a consistent and readable font size */
+  width: 100%; /* Ensures full width inside its container */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft inner shadow for depth */
+  height: 3.5rem; /* Sufficient height for comfortable typing */
+  line-height: 1.5; /* Ensures text is well-aligned within the input fields */
+  background-color: #fff; /* White background for simplicity and clarity */
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; /* Smooth transitions on focus */
+  color: #333; /* Dark color for text to ensure readability */
+}
+
+/* Focus styling for input fields */
+.input-field:focus,
+.textarea-field:focus,
+.date-picker:focus {
+  border-color: #44C6BB; /* Accent border color on focus to draw attention */
+  outline: none; /* Removes the default outline */
+  box-shadow: 0 0 8px rgba(68, 198, 187, 0.6); /* Adds a glowing effect to focused fields */
+  background-color: #f1f1f1; /* Light background change on focus for better visibility */
+}
+
+/* Placeholder styling for input and textarea */
+.input-field::placeholder,
+.textarea-field::placeholder {
+  color: #888; /* Light grey for placeholders to distinguish from input text */
+  font-style: italic; /* Italicizes placeholder text for a subtle effect */
+}
+
+/* Textarea specific styling for better line height and resizing */
+.textarea-field {
+  height: 6rem; /* Increased height for text areas to allow for more content */
+  resize: vertical; /* Allow users to resize the text area vertically */
+}
+
+/* Date-picker specific styling */
+.date-picker {
+  cursor: pointer; /* Changes cursor to a pointer when hovering over the date picker */
+}
+
+/* Remove outline from date-picker */
+.date-picker:focus {
+  outline: none; /* Remove default outline for a cleaner focus effect */
+}
+
+/* Icon picker container styling */
+.icon-picker {
+  display: flex; /* Flexbox layout for icons */
+  flex-wrap: wrap; /* Allow icons to wrap when necessary */
+  gap: 1rem; /* Space between icons */
+  justify-content: center; /* Center icons inside the container */
+}
+
+/* Individual icon styling */
+.icon {
+  cursor: pointer; /* Makes icons clickable */
+  padding: 0.8rem; /* Adds padding around icons for better clickability */
+  border: 2px solid #ccc; /* Light border around icons */
+  border-radius: 50%; /* Makes icons circular */
+  display: flex; /* Flexbox layout to center icon content */
+  align-items: center; /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon */
+  font-size: 1.6rem; /* Larger icon size for better visibility */
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover and select */
+}
+
+/* Hover effect for icon */
+.icon:hover {
+  background-color: #44C6BB; /* Highlight icon with color change on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover for emphasis */
+}
+
+/* Highlight selected icon */
+.icon.selected {
+  border-color: #000; /* Darker border for selected icon */
+  background-color: #44C6BB; /* Background color change for selected icon */
+  color: white; /* White icon when selected for contrast */
+}
+
+/* Submit button styling */
+.submit-button {
+  background-color: #44C6BB; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default button border */
+  padding: 0.8rem; /* Button padding for comfortable click area */
+  border-radius: 6px; /* Rounded corners for a soft look */
+  font-size: 1.15rem; /* Slightly larger font for better readability */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions on hover */
+}
+
+/* Hover effect for submit button */
+.submit-button:hover {
+  background-color: #36a89a; /* Darker button color on hover */
+  transform: scale(1.05); /* Slight scale effect to indicate hover */
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 480px) {
+  .add-edit-form {
+    padding: 1.5rem; /* Reduced padding for smaller screens */
+    gap: 1rem; /* Adjusted gap between elements for compact spacing */
   }
-  
-  .form-title {
-    font-size: 1.8rem; /* Larger title */
-    color: #44C6BB; /* Title color */
-    text-align: center; /* Centered title */
-  }
-  
+
   .input-field,
   .textarea-field,
-  .date-picker,
-  .color-picker {
-    padding: 0.75rem; /* Padding for inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 1rem; /* Consistent font size */
-    width: 100%; /* Full width */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow */
+  .date-picker {
+    font-size: 0.95rem; /* Slightly smaller font size for mobile */
   }
-  
-  .input-field:focus,
-  .textarea-field:focus,
-  .date-picker:focus,
-  .color-picker:focus {
-    border-color: #44C6BB; /* Highlight border on focus */
-    outline: none; /* Remove outline */
-  }
-  
-  .icon-picker {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center; /* Center icons */
-  }
-  
-  .icon {
-    cursor: pointer;
-    padding: 0.5rem;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    transition: border-color 0.3s ease; /* Smooth border transition */
-  }
-  
-  .icon.selected {
-    border-color: #44C6BB; /* Highlight selected icon */
-  }
-  
+
   .submit-button {
-    background-color: #44C6BB; /* Button background */
-    color: white; /* Button text color */
-    border: none; /* Remove border */
-    padding: 0.75rem; /* Button padding */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 1.2rem; /* Button font size */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+    font-size: 1.1rem; /* Adjusted button size for mobile devices */
   }
-  
-  .submit-button:hover {
-    background-color: #36a89a; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight scale effect on hover */
-  }
+}

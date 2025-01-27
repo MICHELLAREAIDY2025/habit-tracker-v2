@@ -17,31 +17,27 @@ console.log("aa"+ habit);
     return Math.ceil(totalMillis / (1000 * 60 * 60 * 24)) + 1;
   };
  
-  const initializeProgress = (startDate, endDate, currentProgress) => {
-    const totalDays = getTotalDays(startDate, endDate);
-    const progress = { ...currentProgress };
-
-    for (let i = 0; i < totalDays; i++) {
-      const date = new Date(startDate);
-      date.setDate(date.getDate() + i);
-      const formattedDate = date.toISOString().split("T")[0];
-
-      if (!(formattedDate in progress)) {
-        progress[formattedDate] = false;  
-      }
-    }
-
-    return progress;
-  };
- 
   useEffect(() => {
     if (habit) {
-      const reinitializedProgress = initializeProgress(
-        habit.startDate,
-        habit.endDate,
-        habit.progress
-      );
-      setLocalProgress(reinitializedProgress);
+      const getTotalDays = (startDate, endDate) => {
+        const totalMillis = new Date(endDate) - new Date(startDate);
+        return Math.ceil(totalMillis / (1000 * 60 * 60 * 24)) + 1;
+      };
+  
+      const totalDays = getTotalDays(habit.startDate, habit.endDate);
+      const progress = { ...habit.progress };
+  
+      for (let i = 0; i < totalDays; i++) {
+        const date = new Date(habit.startDate);
+        date.setDate(date.getDate() + i);
+        const formattedDate = date.toISOString().split("T")[0];
+  
+        if (!(formattedDate in progress)) {
+          progress[formattedDate] = false;
+        }
+      }
+  
+      setLocalProgress(progress);
     }
   }, [habit]);
  

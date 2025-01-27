@@ -47,6 +47,7 @@
 }
 
 .card-description {
+  align-self: flex-start;
   font-size: 1rem;
   color: #666;
   line-height: 1.5;
@@ -59,7 +60,8 @@
 .card-date {
   font-size: 0.85rem;
   color: #aaa;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; 
+  align-self: flex-start;
 }
 
 .card-actions {
@@ -71,14 +73,12 @@
 
 .action-btn {
   font-size: 1rem;
-  color: #777;
+  color: #0a0a0abd;
   cursor: pointer;
   background: none;
   border: none;
   transition: transform 0.3s ease, color 0.3s ease;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  color: #25232361;
+  font-size: 1.5rem; 
   transition: transform 0.3s ease, color 0.3s ease;
 }
 

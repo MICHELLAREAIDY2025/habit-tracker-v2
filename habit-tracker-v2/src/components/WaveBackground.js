@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import './WaveBackground.css'; // Import the CSS file
 
-const WaveBackground = () => {
+const WaveBackground = ({ setShowFavorites }) => {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
+    setShowFavorites(false);// // Ensure all habits are shown
     navigate("/habits"); // Redirect to /habits after clicking the button
   };
 

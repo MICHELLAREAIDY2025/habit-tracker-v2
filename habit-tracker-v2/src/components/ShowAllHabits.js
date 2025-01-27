@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import Calendar from "./Calendar"; 
 import "./ShowAllHabits.css";
 import icons from "../data/icons";
 import 'font-awesome/css/font-awesome.min.css';
-import { FaChartBar } from "react-icons/fa";
+import { FaChartBar } from "react-icons/fa"; 
 
 const ShowAllHabits = ({ habits, deleteHabit, toggleFavorite, updateHabit }) => {
   const [showCalendar, setShowCalendar] = useState(false);
@@ -28,9 +28,18 @@ const ShowAllHabits = ({ habits, deleteHabit, toggleFavorite, updateHabit }) => 
 
   return (
     <div className="habit-list">
-    {habits.length === 0 ? (
-      <p className="no-habits-message">Click the plus in the header to start</p>
-    ) : (
+   {habits.length === 0 ? (
+        <div className="no-habits-container">
+          <div class="stickyNote"></div>
+          <p>Light up your progress with your first habit!</p>
+          <Link to="/add-edit">
+          <button class="icon-btn add-btn">
+          <div class="add-icon"></div>
+          <div class="btn-txt">Add habit</div>
+          </button>
+          </Link>
+        </div>
+      ) : (
       habits.map((habit) => (
         <div
           key={habit.id}

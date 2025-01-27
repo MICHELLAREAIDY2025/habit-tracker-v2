@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #44C6BB; /* Header background color */
+    background-color: #00000095; /* Header background color */
     color: white; /* Text color */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   }
@@ -24,7 +24,7 @@
   }
   
   .header h1 a:hover {
-    color: #e5f8f7; /* Change color on hover */
+    color: #ff7e14; /* Change color on hover */
   }
   
   /* Right section styles */
@@ -42,7 +42,7 @@
   /* Favorites button styles */
   .header-right .favorites-button {
     background-color: white; /* Button background */
-    color: #44C6BB; /* Button text color */
+    color: #ff764c; /* Button text color */
     border: none; /* Remove border */
     padding: 0.5rem 1rem; /* Button padding */
     border-radius: 4px; /* Rounded corners */
@@ -53,13 +53,13 @@
   }
   
   .header-right .favorites-button:hover {
-    background-color: #e5f8f7; /* Hover background color */
+    background-color: #ff764c51; /* Hover background color */
     transform: scale(1.05); /* Slight scale effect on hover */
   }
   
   /* Add button styles */
   .header-right .add-button {
-    background-color: #FF6B6B; /* Bright color for visibility */
+    background-color: #ff764c; /* Bright color for visibility */
     color: white; /* Button text color */
     border: none; /* Remove border */
     padding: 0.5rem 1rem; /* Button padding */
@@ -70,7 +70,7 @@
   }
   
   .header-right .add-button:hover {
-    background-color: #FF4C4C; /* Darker shade on hover */
+    /* Darker shade on hover */
     transform: scale(1.1); /* Slight scale effect on hover */
   }
   

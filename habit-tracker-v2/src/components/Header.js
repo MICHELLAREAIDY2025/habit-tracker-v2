@@ -12,7 +12,11 @@ const Header = ({ toggleShowFavorites }) => {
         <Link to="/">Daily Spark</Link> {/* Link to the home page, with the site title */}
       </h1>
       <div className="header-right"> {/* Container for right-aligned elements in the header */}
-        <div className="clock">{new Date().toLocaleTimeString()}</div> {/* Display the current time */}
+      <Link to="/habits">
+      <button className="favorites-button"> {/* Button to view all habits */}
+          Show All habits {/* Button text */}
+        </button>
+        </Link>
         <button className="favorites-button" onClick={toggleShowFavorites}> {/* Button to toggle favorite view */}
           Favorites {/* Button text */}
         </button>

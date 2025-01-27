@@ -65,7 +65,16 @@ console.log("aa"+ habit);
     date.setDate(date.getDate() + i);
     return date;
   });
-
+  const getTextColor = (bgColor) => {
+    const hex = bgColor.replace("#", "");
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  
+    return brightness > 128 ? "#000" : "#fff";
+  };
+  
   return (
     <div className="calendar">
       <button className="close-btn" onClick={closePopup}>
@@ -84,7 +93,10 @@ console.log("aa"+ habit);
             <div
               key={index}
               className={`day-card ${isCompleted ? "completed" : ""}`}
-              style={{ backgroundColor: isCompleted ? habit.color : "#eee" }}
+              style={{
+                backgroundColor: isCompleted ? habit.color : "#eee",
+                "--text-color": isCompleted ? getTextColor(habit.color) : "#333",
+              }}
               onClick={() => markDayComplete(date)} 
             >
               <p>{date.toLocaleDateString("en-US", { weekday: "short" })}</p>

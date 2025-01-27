@@ -56,7 +56,6 @@
   color: #555;
   overflow: hidden;
   white-space: nowrap;
-  
   animation: typing 4s steps(40, end), blink 1s step-end infinite;
   text-align: center;
 }
@@ -70,18 +69,25 @@
   }
 }
 
- 
+/* Day Slider */
 .day-slider {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   width: 100%;
   padding: 10px 0;
+  justify-content: space-between;
 }
 
-@media (min-width: 600px) {
-  .day-slider {
-    grid-template-columns: repeat(7, 1fr);  
+.day-slider .day-card {
+  flex: 1 0 calc(100% / 7 - 10px); /* Adjusts for gaps */
+  max-width: calc(100% / 7 - 10px);
+}
+
+@media (max-width: 600px) {
+  .day-slider .day-card {
+    flex: 1 0 calc(100% / 3 - 10px);
+    max-width: calc(100% / 3 - 10px);
   }
 }
 
@@ -101,12 +107,17 @@
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+.day-card p {
+  margin: 0;  
+  font-size: 14px;  
+  color: var(--text-color);   
+}
 
 .day-card.completed {
   background-color: #4caf50;
   color: #ffffff;
-  border: 2px solid #388e3c;
-  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+  border: 2px solid #e3e3e3;
+  box-shadow: 0 4px 8px rgba(186, 188, 186, 0.3);
 }
 
 .day-card:hover {
@@ -133,7 +144,6 @@
 
 .close-btn:hover { 
   transform: scale(1.3);  
-   
 }
 
 .close-btn:focus {

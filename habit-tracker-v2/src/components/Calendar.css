@@ -34,7 +34,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   animation: slideUp 0.3s ease-in-out;
 }
 
@@ -76,7 +76,7 @@
   gap: 10px;
   width: 100%;
   padding: 10px 0;
-  justify-content: space-between;
+  justify-content:flex-start;;
 }
 
 .day-slider .day-card {

@@ -87,6 +87,7 @@ const AddEditHabit = ({ habits, addHabit, editHabit }) => {
           </div>
         ))}
       </div>
+      <label>start date</label>
       <input
         type="date" // Date input type for start date
         name="startDate" // Input name for the start date
@@ -94,6 +95,7 @@ const AddEditHabit = ({ habits, addHabit, editHabit }) => {
         onChange={handleInputChange} // Event handler for input change
         required // Makes this field mandatory
       />
+      <label>end date</label>
       <input
         type="date" // Date input type for end date
         name="endDate" // Input name for the end date
